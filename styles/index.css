@@ -3312,11 +3312,13 @@ strong {
   top: auto;
   overflow: hidden;
   transform: rotate(-3deg);
+  width: 93vw;
+  height: 20vh;
 }
 
 .paragraph {
   font-family: Proxima Nova, sans-serif;
-  font-size: 1.7vw;
+  font-size: 1.5vw;
   font-weight: 400;
   line-height: 115%;
   width: 50%;
@@ -3564,7 +3566,7 @@ strong {
 
 .track {
   background-color: #faeade;
-  height: 550vh;
+  height: 1550vh;
   display: block;
 }
 
@@ -3629,7 +3631,7 @@ strong {
   flex: none;
   justify-content: flex-start;
   align-items: center;
-  width: 550vw;
+  width: 700vw;
   height: 100vh;
   display: flex;
 }
@@ -4841,7 +4843,7 @@ strong {
   letter-spacing: -.01vw;
   font-family: Antonio, sans-serif;
   font-weight: 700;
-  font-size: 1.4rem;
+  font-size: 120%;
   position: absolute;
 }
 
@@ -4852,7 +4854,7 @@ strong {
   width: 12.5vw;
   height: 12.5vw;
   position: absolute;
-  inset: -1.4vw 0% 0%;
+  inset: -50% 0% 0%;
 }
 
 .light-button {
@@ -14596,4 +14598,25 @@ strong {
     grid-area: span 1 / span 1 / span 1 / span 1;
     place-self: center;
   }
+}
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 999;
+  width: 60px;
+  height: 60px;
+}
+
+.whatsapp-button img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+}
+
+.whatsapp-button img:hover {
+  transform: scale(1.1);
 }

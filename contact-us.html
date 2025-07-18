@@ -1156,7 +1156,16 @@ document.getElementById("wf-form-Contact-us-form").addEventListener("submit", as
       phone,
       formationType,
       wilaya,
-      timestamp: new Date()
+        timestamp: new Date(),  // raw JS timestamp (still useful for sorting)
+  subscriptionDate: new Intl.DateTimeFormat('fr-DZ', {
+    timeZone: 'Africa/Algiers',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit'
+  }).format(new Date())
     });
 
     // Show success message

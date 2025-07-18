@@ -3860,7 +3860,22 @@ strong {
   position: absolute;
   inset: auto auto 2.3vw 2vw;
 }
+ .heading-size {
+    font-size: 1.8rem;
+        line-height: 3rem;
+        bottom:-13rem;
 
+  }
+     .heading-sizebig {
+      font-size: 1.8rem;
+        line-height: 3rem;
+        bottom:-16rem;
+   
+  }
+       .countersize {
+     height: 230px;
+   
+  }
 .card-heading.brown {
   color: #865720;
 }
@@ -11604,11 +11619,26 @@ border-radius: 20px;
   }
 
   .card-heading {
-    font-size: 24px;
+   
     bottom: 16px;
     left: 16px;
   }
-
+  .heading-size {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+      bottom:-10rem;
+   
+  }
+   .heading-sizebig {
+    font-size: 1.3rem;
+    line-height: 1.8rem;
+      bottom:-14rem;
+   
+  }
+         .countersize {
+     height: 100px;
+   
+  }
   .vanila-section-image {
     width: 190%;
     max-width: none;

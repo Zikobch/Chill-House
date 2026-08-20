@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Chill House - Rejoignez notre équipe | Recrutement</title>
+    <meta content="Rejoignez l'équipe Chill House en tant que Barman, Barista ou Crêpier. Postulez en quelques secondes." name="description" />
+    <meta content="/assets/images/logo.png" property="og:image" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <link href="/styles/index.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        WebFont.load({
+            google: {
+                families: ["Antonio:100,200,300,regular,500,600,700", "Cairo:400,500,600,700,800"]
+            }
+        });
+    </script>
+    <link href="/assets/images/chill house.svg" rel="shortcut icon" type="image/x-icon" />
+    <link href="/assets/images/chill house.svg" rel="apple-touch-icon" />
+    <style>
+        ::-webkit-scrollbar {
+            display: none;
+        }
+
+        .home-nav {
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 1.5vw 2vw;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: linear-gradient(180deg, #232323e6 0%, #23232300 100%);
+        }
+
+        .home-nav_logo {
+            width: 4.5vw;
+            min-width: 55px;
+            display: block;
+        }
+
+        .home-nav_links {
+            display: flex;
+            align-items: center;
+            gap: 2vw;
+        }
+
+        .home-nav_links a {
+            color: #faeade;
+            font-family: Antonio, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            font-size: 1vw;
+            text-decoration: none;
+            opacity: 0.85;
+        }
+
+        .home-nav_links a:hover {
+            opacity: 1;
+        }
+
+        .home-nav_toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 10px;
+            z-index: 101;
+        }
+
+        .home-nav_toggle span {
+            width: 26px;
+            height: 2px;
+            background: #faeade;
+            display: block;
+            transition: transform 0.2s ease, opacity 0.2s ease;
+        }
+
+        .home-nav_toggle.is-open span:first-child {
+            transform: translateY(3.5px) rotate(45deg);
+        }
+
+        .home-nav_toggle.is-open span:last-child {
+            transform: translateY(-3.5px) rotate(-45deg);
+        }
+
+        /* Language switcher */
+        .home-lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            background-color: #ffffff1f;
+            border-radius: 100px;
+            padding: 3px;
+        }
+
+        .home-lang-btn {
+            font-family: Antonio, sans-serif;
+            font-size: 0.75vw;
+            letter-spacing: 0.03em;
+            color: #faeade;
+            background: transparent;
+            border: none;
+            border-radius: 100px;
+            padding: 5px 11px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+        }
+
+        .home-lang-btn:hover {
+            opacity: 1;
+        }
+
+        .home-lang-btn.is-active {
+            background-color: #faeade;
+            color: #523122;
+            opacity: 1;
+        }
+
+        .home-hero {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .home-hero_bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .home-hero_overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, #232323cc 0%, #232323e6 60%, #523122f2 100%);
+        }
+
+        .home-hero_content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            text-align: center;
+            padding: 8vw 5vw 4vw;
+            max-width: 900px;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }
+
+        .home-hero_title {
+            color: #faeade;
+            text-align: center;
+            text-transform: uppercase;
+            font-family: Antonio, sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 105%;
+            font-size: 6vw;
+            margin: 0;
+        }
+
+        .home-hero_text {
+            text-align: center;
+            color: #f2d5c0;
+            font-family: Proxima Nova, sans-serif;
+            font-weight: 400;
+            font-size: 1.4vw;
+            line-height: 150%;
+            max-width: 680px;
+            margin: 1.5vw auto 0;
+            white-space: pre-line;
+        }
+
+        .home-roles {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            gap: 1.5vw;
+            flex-wrap: wrap;
+            margin-top: 1.5vw;
+        }
+
+        .home-role-chip {
+            background-color: #faeade;
+            color: #523122;
+            font-family: Antonio, sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            font-weight: 700;
+            font-size: 1.1vw;
+            padding: 0.7vw 1.6vw;
+            border-radius: 100vw;
+        }
+
+        .home-form-section {
+            background-color: #f2d5c0;
+            padding: 6vw 5vw;
+        }
+
+        .home-form-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 1.5vw;
+            padding: 3vw;
+        }
+
+        .home-form-wrapper h2 {
+            color: #523122;
+            font-family: Antonio, sans-serif;
+            text-transform: uppercase;
+            font-size: 2.8vw;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            word-spacing: 0.3em;
+            text-align: center;
+            margin-bottom: 0.5vw;
+        }
+
+        .home-form-wrapper p.subtitle {
+            text-align: center;
+            color: #6b4a34;
+            font-family: Proxima Nova, sans-serif;
+            font-size: 1.1vw;
+            margin-bottom: 2vw;
+        }
+
+        .home-form-grid select.contact_form_text-field {
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23523122'><path d='M7 10l5 5 5-5z'/></svg>");
+            background-repeat: no-repeat;
+            background-position: right 1vw center;
+            background-size: 1.2vw;
+        }
+
+        .home-form-grid .contact_form_text-field:focus {
+            background-color: #f8e4d5;
+            outline: 2px solid #523122;
+            outline-offset: 2px;
+        }
+
+        .home-submit-row {
+            display: flex;
+            justify-content: center;
+            margin-top: 1vw;
+        }
+
+        .home-submit-row .liquid-button {
+            width: auto;
+            height: auto;
+            min-height: 56px;
+            padding: 14px 44px;
+            border-radius: 100px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            border: none;
+        }
+
+        .home-submit-row .liquid-button .button-text {
+            position: static;
+            z-index: auto;
+            font-size: 15px;
+            letter-spacing: 0.03em;
+            white-space: nowrap;
+        }
+
+        /* Floating contact buttons (WhatsApp / Call) — populated at runtime
+           from Firestore settings, hidden until a number is configured. */
+        .home-fab-group {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            z-index: 90;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .home-fab {
+            position: relative;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 58px;
+            height: 58px;
+            border-radius: 50%;
+            color: #fff;
+            text-decoration: none;
+            box-shadow: 0 10px 28px rgba(35, 33, 33, 0.28);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .home-fab:hover {
+            transform: scale(1.08) translateY(-2px);
+            box-shadow: 0 14px 32px rgba(35, 33, 33, 0.32);
+        }
+
+        .home-fab::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: inherit;
+            z-index: -1;
+            animation: home-fab-pulse 2.4s ease-out infinite;
+        }
+
+        .home-fab--whatsapp {
+            background-color: #25d366;
+        }
+
+        .home-fab--call {
+            background-color: var(--ch-purple, #9000ff);
+        }
+
+        .home-fab svg {
+            width: 26px;
+            height: 26px;
+            position: relative;
+        }
+
+        .home-fab_tooltip {
+            position: absolute;
+            right: 72px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #232323;
+            color: #faeade;
+            font-family: Proxima Nova, sans-serif;
+            font-size: 0.85rem;
+            padding: 6px 14px;
+            border-radius: 8px;
+            white-space: nowrap;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .home-fab:hover .home-fab_tooltip {
+            opacity: 1;
+        }
+
+        @keyframes home-fab-pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.55;
+            }
+
+            100% {
+                transform: scale(1.7);
+                opacity: 0;
+            }
+        }
+
+        /* ---------- Arabic / RTL support ---------- */
+        [lang="ar"] {
+            font-family: Cairo, sans-serif;
+        }
+
+        [lang="ar"] * {
+            font-family: Cairo, sans-serif !important;
+            letter-spacing: normal !important;
+            word-spacing: normal !important;
+        }
+
+        [dir="rtl"] .home-fab-group {
+            right: auto;
+            left: 24px;
+        }
+
+        [dir="rtl"] .home-fab_tooltip {
+            right: auto;
+            left: 72px;
+        }
+
+        [dir="rtl"] .home-form-grid .contact_form_text-field {
+            padding-left: 0;
+            padding-right: 2vw;
+            text-align: right;
+        }
+
+        [dir="rtl"] .home-form-grid select.contact_form_text-field {
+            padding-left: 2.5vw;
+            background-position: left 1vw center;
+        }
+
+        @media screen and (max-width: 767px) {
+            .home-fab-group {
+                right: 16px;
+                bottom: 16px;
+                gap: 12px;
+            }
+
+            .home-fab {
+                width: 52px;
+                height: 52px;
+            }
+
+            .home-fab svg {
+                width: 24px;
+                height: 24px;
+            }
+
+            .home-fab_tooltip {
+                display: none;
+            }
+
+            [dir="rtl"] .home-fab-group {
+                left: 16px;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .home-nav {
+                padding: 14px 20px;
+            }
+
+            .home-nav_logo {
+                width: 42px;
+                min-width: 42px;
+            }
+
+            .home-nav_links {
+                display: none;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                padding: 100px 32px 40px;
+                background: #232323f2;
+                z-index: 99;
+            }
+
+            .home-nav_links.home-nav_links--open {
+                display: flex;
+            }
+
+            .home-nav_links a {
+                font-size: 7vw;
+                width: 100%;
+                padding: 16px 0;
+                border-bottom: 1px solid #faeade33;
+                opacity: 1;
+            }
+
+            .home-lang-switcher {
+                margin-top: 24px;
+                padding: 4px;
+            }
+
+            .home-lang-btn {
+                font-size: 4vw;
+                padding: 10px 18px;
+            }
+
+            .home-nav_toggle {
+                display: flex;
+            }
+
+            .home-hero {
+                min-height: auto;
+                height: auto;
+                overflow: visible;
+                align-items: flex-start;
+                justify-content: flex-start;
+                padding-bottom: 60px;
+            }
+
+            .home-hero_content {
+                width: 100%;
+                padding: 0 24px;
+                padding-top: 110px;
+            }
+
+            .home-hero_title {
+                font-size: 9vw;
+            }
+
+            .home-hero_text {
+                font-size: 4.4vw;
+                max-width: 100%;
+            }
+
+            .home-form-wrapper p.subtitle {
+                font-size: 4.2vw;
+            }
+
+            .home-roles {
+                margin-top: 6vw;
+                gap: 3vw;
+            }
+
+            .home-role-chip {
+                font-size: 4vw;
+                padding: 2.5vw 5vw;
+            }
+
+            .home-form-wrapper h2 {
+                font-size: 6.5vw;
+            }
+
+            .home-form-section {
+                padding: 14vw 6vw;
+            }
+
+            .home-form-grid {
+                grid-template-columns: 1fr !important;
+                grid-row-gap: 4vw !important;
+            }
+
+            .home-form-wrapper {
+                padding: 8vw 6vw;
+                border-radius: 6vw;
+            }
+
+            .home-submit-row {
+                margin-top: 3vw;
+            }
+
+            /* The shared stylesheet's footer-grid uses grid-area coordinates tuned
+               for the original multi-section page (including a 5th column for an
+               empty spacer), which breaks down on a standalone page. Overriding
+               with a simple stacked flex layout for a predictable mobile footer. */
+            .div-block-65 {
+                display: none;
+            }
+
+            .footer-grid {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 24px;
+                margin-top: 48px;
+                padding: 0 24px 40px;
+            }
+
+            .div-block-15 {
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="home-nav">
+        <a href="/" class="navbar_logo_link w-inline-block">
+            <img src="/assets/images/chill house.svg" loading="lazy" alt="Chill House" class="home-nav_logo" />
+        </a>
+        <nav class="home-nav_links">
+            <a href="/" data-i18n="navHome">Accueil</a>
+            <a href="/about" data-i18n="navTeam">Notre Équipe</a>
+            <a href="/Home" data-i18n="navRecruit">Recrutement</a>
+            <a href="/contact-us" data-i18n="navContact">Contact</a>
+            <div class="home-lang-switcher" id="home-lang-switcher">
+                <button type="button" class="home-lang-btn" data-lang="fr">FR</button>
+                <button type="button" class="home-lang-btn" data-lang="en">EN</button>
+                <button type="button" class="home-lang-btn" data-lang="ar">AR</button>
+            </div>
+        </nav>
+        <button class="home-nav_toggle" id="home-nav-toggle" aria-label="Menu">
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <section class="home-hero">
+        <img src="/assets/images/backgroundhome.jpg" alt="" class="home-hero_bg" />
+        <div class="home-hero_overlay"></div>
+        <div class="home-hero_content">
+            <h1 class="home-hero_title" data-i18n="heroTitle">Rejoignez l'équipe Chill House</h1>
+            <p class="home-hero_text" data-i18n="heroText">Vous êtes passionné(e) par l'hôtellerie et la restauration ? Nous recrutons des Barmans, Baristas et Crêpiers talentueux. Postulez en moins d'une minute, notre équipe vous recontactera rapidement.</p>
+            <div class="home-roles">
+                <div class="home-role-chip" data-i18n="roleBarman">Barman</div>
+                <div class="home-role-chip" data-i18n="roleBarista">Barista</div>
+                <div class="home-role-chip" data-i18n="roleCrepier">Crêpier</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="home-form-section">
+        <div class="home-form-wrapper">
+            <h2 data-i18n="formTitle">Formulaire de candidature</h2>
+            <p class="subtitle" data-i18n="formSubtitle">Remplissez vos informations, nous vous contacterons rapidement.</p>
+
+            <div id="Candidate-form" class="contact_form w-form">
+                <form id="wf-form-candidate" class="contact_form_grid home-form-grid">
+                    <input class="contact_form_text-field w-input" maxlength="256" name="prenom"
+                        data-i18n-placeholder="firstNamePlaceholder" placeholder="Prénom" type="text" id="prenom"
+                        required />
+                    <input class="contact_form_text-field w-input" maxlength="256" name="nom"
+                        data-i18n-placeholder="lastNamePlaceholder" placeholder="Nom" type="text" id="nom" required />
+                    <select id="wilaya" name="wilaya" required class="contact_form_text-field select w-select">
+                        <option value="" data-i18n="wilayaPlaceholder">Wilaya</option>
+                        <option value="Adrar">Adrar</option>
+                        <option value="Chlef">Chlef</option>
+                        <option value="Laghouat">Laghouat</option>
+                        <option value="Oum El Bouaghi">Oum El Bouaghi</option>
+                        <option value="Batna">Batna</option>
+                        <option value="Béjaïa">Béjaïa</option>
+                        <option value="Biskra">Biskra</option>
+                        <option value="Béchar">Béchar</option>
+                        <option value="Blida">Blida</option>
+                        <option value="Bouira">Bouira</option>
+                        <option value="Tamanrasset">Tamanrasset</option>
+                        <option value="Tébessa">Tébessa</option>
+                        <option value="Tlemcen">Tlemcen</option>
+                        <option value="Tiaret">Tiaret</option>
+                        <option value="Tizi Ouzou">Tizi Ouzou</option>
+                        <option value="Alger">Alger</option>
+                        <option value="Djelfa">Djelfa</option>
+                        <option value="Jijel">Jijel</option>
+                        <option value="Sétif">Sétif</option>
+                        <option value="Saïda">Saïda</option>
+                        <option value="Skikda">Skikda</option>
+                        <option value="Sidi Bel Abbès">Sidi Bel Abbès</option>
+                        <option value="Annaba">Annaba</option>
+                        <option value="Guelma">Guelma</option>
+                        <option value="Constantine">Constantine</option>
+                        <option value="Médéa">Médéa</option>
+                        <option value="Mostaganem">Mostaganem</option>
+                        <option value="MSila">MSila</option>
+                        <option value="Mascara">Mascara</option>
+                        <option value="Ouargla">Ouargla</option>
+                        <option value="Oran">Oran</option>
+                        <option value="El Bayadh">El Bayadh</option>
+                        <option value="Illizi">Illizi</option>
+                        <option value="Bordj Bou Arreridj">Bordj Bou Arreridj</option>
+                        <option value="Boumerdès">Boumerdès</option>
+                        <option value="El Tarf">El Tarf</option>
+                        <option value="Tindouf">Tindouf</option>
+                        <option value="Tissemsilt">Tissemsilt</option>
+                        <option value="El Oued">El Oued</option>
+                        <option value="Khenchela">Khenchela</option>
+                        <option value="Souk Ahras">Souk Ahras</option>
+                        <option value="Tipaza">Tipaza</option>
+                        <option value="Mila">Mila</option>
+                        <option value="Aïn Defla">Aïn Defla</option>
+                        <option value="Naâma">Naâma</option>
+                        <option value="Aïn Témouchent">Aïn Témouchent</option>
+                        <option value="Ghardaïa">Ghardaïa</option>
+                        <option value="Relizane">Relizane</option>
+                        <option value="Timimoun">Timimoun</option>
+                        <option value="Bordj Badji Mokhtar">Bordj Badji Mokhtar</option>
+                        <option value="Ouled Djellal">Ouled Djellal</option>
+                        <option value="Béni Abbès">Béni Abbès</option>
+                        <option value="In Salah">In Salah</option>
+                        <option value="In Guezzam">In Guezzam</option>
+                        <option value="Touggourt">Touggourt</option>
+                        <option value="Djanet">Djanet</option>
+                        <option value="El M'Ghair">El M'Ghair</option>
+                        <option value="El Menia">El Menia</option>
+                    </select>
+                    <input class="contact_form_text-field w-input" maxlength="256" name="telephone"
+                        data-i18n-placeholder="phonePlaceholder" placeholder="Numéro de téléphone" type="tel"
+                        id="telephone" required />
+                    <select id="poste" name="poste" required class="contact_form_text-field select w-select">
+                        <option value="" data-i18n="postePlaceholder">Poste souhaité</option>
+                        <option value="Barman">Barman</option>
+                        <option value="Barista">Barista</option>
+                        <option value="Crêpier">Crêpier</option>
+                    </select>
+                    <div class="home-submit-row" style="grid-column: 1 / -1;">
+                        <button type="submit" data-wait="Envoi en cours..." class="liquid-button w-inline-block">
+                            <div class="button-text" data-i18n="submitBtn">Envoyer ma candidature</div>
+                        </button>
+                    </div>
+                </form>
+                <div class="success-message-2 w-form-done">
+                    <div class="div-block-178">
+                        <p class="paragraph" data-i18n="successMsg" style="width: 100%; text-align: center;">
+                            Merci ! Votre candidature a bien été reçue. Notre équipe vous recontactera bientôt.
+                        </p>
+                    </div>
+                </div>
+                <div class="error-message w-form-fail">
+                    <div data-i18n="errorMsg">Oups ! Une erreur est survenue lors de l'envoi. Merci de réessayer.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <img src="https://cdn.prod.website-files.com/669a8d6498ba88c08dfd2cd2/66a79692bac3e381538a3e53_melting%20bg.svg"
+        loading="lazy" alt="" class="lline" />
+    <div class="footer">
+        <div class="div-block-14">
+            <div class="heading-teg">
+                <div class="div-heading-claear foter">
+                    <div class="text-block-4 d" data-i18n="footerTagline">#Votre future est notre mission.</div>
+                </div>
+            </div>
+            <div class="social-media">
+                <a href="https://www.facebook.com/profile.php?id=100083834376101" target="_blank"
+                    class="link-block w-inline-block">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#faeade"
+                        class="image-4">
+                        <path
+                            d="M22 16.19C22 19.83 19.83 22 16.19 22H15C14.45 22 14 21.55 14 21V15.23C14 14.96 14.22 14.73 14.49 14.73L16.25 14.7C16.39 14.69 16.51 14.59 16.54 14.45L16.89 12.54C16.92 12.36 16.78 12.19 16.59 12.19L14.46 12.22C14.18 12.22 13.96 12 13.95 11.73L13.91 9.28C13.91 9.12 14.04 8.98001 14.21 8.98001L16.61 8.94C16.78 8.94 16.91 8.81001 16.91 8.64001L16.87 6.23999C16.87 6.06999 16.74 5.94 16.57 5.94L13.87 5.98001C12.21 6.01001 10.89 7.37 10.92 9.03L10.97 11.78C10.98 12.06 10.76 12.28 10.48 12.29L9.28 12.31C9.11 12.31 8.98001 12.44 8.98001 12.61L9.01001 14.51C9.01001 14.68 9.14 14.81 9.31 14.81L10.51 14.79C10.79 14.79 11.01 15.01 11.02 15.28L11.11 20.98C11.12 21.54 10.67 22 10.11 22H7.81C4.17 22 2 19.83 2 16.18V7.81C2 4.17 4.17 2 7.81 2H16.19C19.83 2 22 4.17 22 7.81V16.19Z"
+                            fill="#faeade" />
+                    </svg>
+                </a>
+                <a href="https://www.instagram.com/formation_barman/" target="_blank" class="link-block w-inline-block">
+                    <img src="https://cdn.prod.website-files.com/669a8d6498ba88c08dfd2cd2/66a79d2834bbc2ceaa8ebae2_instagram-logo.svg"
+                        loading="lazy" alt="" class="image-4" />
+                </a>
+                <a href="https://www.tiktok.com/@formationbarman22?_t=8j7NNMiWgjt&_r=1" target="_blank"
+                    class="link-block w-inline-block">
+                    <img src="https://cdn.prod.website-files.com/669a8d6498ba88c08dfd2cd2/66a79d28a6b0b117a9083b9c_tictock-logo.svg"
+                        loading="lazy" alt="" class="image-4" />
+                </a>
+            </div>
+            <div class="w-layout-grid footer-grid">
+                <div id="w-node-_2b4c6b24-f914-d415-bf21-ed71fcf94b8a-fcf94b6f" class="div-block-15">
+                    <a href="/about" class="footer-link" data-i18n="footerAbout">About</a>
+                    <a href="/contact-us" class="footer-link" data-i18n="footerContact">Contact</a>
+                    <a href="/stories" class="footer-link" data-i18n="footerStories">Histoires</a>
+                </div>
+                <div id="w-node-_2b4c6b24-f914-d415-bf21-ed71fcf94b93-fcf94b6f" class="div-block-65"></div>
+                <div id="w-node-_2b4c6b24-f914-d415-bf21-ed71fcf94b94-fcf94b6f">
+                    <p class="paragraph milk" style="display: flex; align-items:center; font-size: 1rem; width:100%">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#fff">
+                            <path
+                                d="M20.62 8.7C19.58 4.07 15.54 2 12 2C12 2 12 2 11.99 2C8.45999 2 4.42999 4.07 3.37999 8.69C2.19999 13.85 5.35999 18.22 8.21999 20.98C9.27999 22 10.64 22.51 12 22.51C13.36 22.51 14.72 22 15.77 20.98C18.63 18.22 21.79 13.86 20.62 8.7ZM15.28 9.53L11.28 13.53C11.13 13.68 10.94 13.75 10.75 13.75C10.56 13.75 10.37 13.68 10.22 13.53L8.71999 12.03C8.42999 11.74 8.42999 11.26 8.71999 10.97C9.00999 10.68 9.48999 10.68 9.77999 10.97L10.75 11.94L14.22 8.47C14.51 8.18 14.99 8.18 15.28 8.47C15.57 8.76 15.57 9.24 15.28 9.53Z"
+                                fill="#faeade" />
+                        </svg>
+                        <span style="margin-left: 10px; font-size: 1.2rem !important;">Chill House 21 haddouche
+                            smail, Alger Centre 16000</span>
+                    </p>
+                </div>
+                <div id="w-node-_2b4c6b24-f914-d415-bf21-ed71fcf94ba1-fcf94b6f">
+                    <p class="paragraph gray" data-i18n="footerCopyright" style="font-size: 1rem; width:100%">Copyright © 2026 Chill House</p>
+                </div>
+                <div id="w-node-_2b4c6b24-f914-d415-bf21-ed71fcf94ba4-fcf94b6f" class="div-block-157">
+                    <a href="/privacy-policy" class="footer-link gray"
+                        style="font-weight: 100; font-size: 1rem; width:100%">Designed by Flow Genius</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="home-fab-group" id="home-fab-group">
+        <a href="#" id="whatsapp-fab" class="home-fab home-fab--whatsapp" target="_blank" rel="noopener"
+            aria-label="Discuter sur WhatsApp">
+            <span class="home-fab_tooltip" data-i18n="waTooltip">Discuter sur WhatsApp</span>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path
+                    d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2ZM12.04 3.67C14.25 3.67 16.32 4.53 17.89 6.1C19.45 7.67 20.31 9.74 20.31 11.92C20.31 16.46 16.58 20.15 12.03 20.15C10.56 20.15 9.12 19.76 7.85 19.03L7.55 18.85L4.43 19.67L5.26 16.63L5.06 16.31C4.26 15 3.83 13.47 3.83 11.91C3.84 7.37 7.5 3.67 12.04 3.67ZM8.53 6.81C8.37 6.81 8.1 6.87 7.87 7.12C7.65 7.37 7 7.98 7 9.19C7 10.4 7.89 11.58 8 11.74C8.14 11.9 9.76 14.42 12.25 15.5C12.85 15.78 13.32 15.94 13.68 16.06C14.28 16.25 14.83 16.22 15.27 16.16C15.76 16.09 16.76 15.55 16.98 14.95C17.19 14.35 17.19 13.84 17.13 13.73C17.06 13.62 16.9 13.56 16.65 13.44C16.4 13.31 15.18 12.71 14.95 12.63C14.71 12.54 14.54 12.5 14.38 12.75C14.22 13 13.75 13.55 13.6 13.71C13.46 13.88 13.31 13.9 13.06 13.78C12.81 13.65 12 13.38 11.06 12.54C10.32 11.88 9.82 11.06 9.68 10.81C9.54 10.56 9.66 10.43 9.79 10.3C9.9 10.19 10.05 10 10.18 9.86C10.3 9.71 10.34 9.6 10.42 9.44C10.5 9.28 10.46 9.14 10.4 9.02C10.34 8.9 9.85 7.67 9.62 7.18C9.43 6.75 9.23 6.76 9.06 6.75C8.9 6.75 8.71 6.81 8.53 6.81Z" />
+            </svg>
+        </a>
+        <a href="#" id="call-fab" class="home-fab home-fab--call" aria-label="Appeler">
+            <span class="home-fab_tooltip" data-i18n="callTooltip">Appelez-nous</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+        </a>
+    </div>
+
+    <script>
+        const homeNavToggle = document.getElementById("home-nav-toggle");
+        const homeNavLinks = document.querySelector(".home-nav_links");
+
+        homeNavToggle.addEventListener("click", function () {
+            homeNavLinks.classList.toggle("home-nav_links--open");
+            homeNavToggle.classList.toggle("is-open");
+        });
+
+        homeNavLinks.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                homeNavLinks.classList.remove("home-nav_links--open");
+                homeNavToggle.classList.remove("is-open");
+            });
+        });
+    </script>
+
+    <script>
+        // --- Trilingual support (FR / EN / AR) with system-language auto-detection ---
+        const translations = {
+            fr: {
+                pageTitle: "Chill House - Rejoignez notre équipe | Recrutement",
+                metaDescription: "Rejoignez l'équipe Chill House en tant que Barman, Barista ou Crêpier. Postulez en quelques secondes.",
+                navHome: "Accueil",
+                navTeam: "Notre Équipe",
+                navRecruit: "Recrutement",
+                navContact: "Contact",
+                heroTitle: "Rejoignez l'équipe Chill House",
+                heroText: "Vous êtes passionné(e) par l'hôtellerie et la restauration ? Nous recrutons des Barmans, Baristas et Crêpiers talentueux. Postulez en moins d'une minute, notre équipe vous recontactera rapidement.",
+                roleBarman: "Barman",
+                roleBarista: "Barista",
+                roleCrepier: "Crêpier",
+                formTitle: "Formulaire de candidature",
+                formSubtitle: "Remplissez vos informations, nous vous contacterons rapidement.",
+                firstNamePlaceholder: "Prénom",
+                lastNamePlaceholder: "Nom",
+                wilayaPlaceholder: "Wilaya",
+                phonePlaceholder: "Numéro de téléphone",
+                postePlaceholder: "Poste souhaité",
+                submitBtn: "Envoyer ma candidature",
+                successMsg: "Merci ! Votre candidature a bien été reçue. Notre équipe vous recontactera bientôt.",
+                errorMsg: "Oups ! Une erreur est survenue lors de l'envoi. Merci de réessayer.",
+                footerTagline: "#Votre future est notre mission.",
+                footerAbout: "À propos",
+                footerContact: "Contact",
+                footerStories: "Histoires",
+                footerCopyright: "Copyright © 2026 Chill House",
+                waTooltip: "Discuter sur WhatsApp",
+                callTooltip: "Appelez-nous"
+            },
+            en: {
+                pageTitle: "Chill House - Join Our Team | Careers",
+                metaDescription: "Join the Chill House team as a Barman, Barista or Crêpier. Apply in a few seconds.",
+                navHome: "Home",
+                navTeam: "Our Team",
+                navRecruit: "Careers",
+                navContact: "Contact",
+                heroTitle: "Join the Chill House Team",
+                heroText: "Passionate about hospitality and food service? We're hiring talented Barmen, Baristas and Crêpiers. Apply in under a minute, our team will get back to you quickly.",
+                roleBarman: "Barman",
+                roleBarista: "Barista",
+                roleCrepier: "Crêpier",
+                formTitle: "Application Form",
+                formSubtitle: "Fill in your details and we'll contact you shortly.",
+                firstNamePlaceholder: "First name",
+                lastNamePlaceholder: "Last name",
+                wilayaPlaceholder: "Province (Wilaya)",
+                phonePlaceholder: "Phone number",
+                postePlaceholder: "Desired position",
+                submitBtn: "Submit my application",
+                successMsg: "Thank you! Your application has been received. Our team will contact you soon.",
+                errorMsg: "Oops! Something went wrong while sending. Please try again.",
+                footerTagline: "#Your future is our mission.",
+                footerAbout: "About",
+                footerContact: "Contact",
+                footerStories: "Stories",
+                footerCopyright: "Copyright © 2026 Chill House",
+                waTooltip: "Chat on WhatsApp",
+                callTooltip: "Call us"
+            },
+            ar: {
+                pageTitle: "Chill House - انضم إلى فريقنا | التوظيف",
+                metaDescription: "انضم إلى فريق Chill House كبارمان أو باريستا أو صانع كريب. قدّم ترشحك في ثواني.",
+                navHome: "الرئيسية",
+                navTeam: "فريقنا",
+                navRecruit: "التوظيف",
+                navContact: "اتصل بنا",
+                heroTitle: "أهلاً وسهلاً بكم في CHILL HOUSE",
+                heroText: "حبيت تولّي بارمان محترف؟\nحبيت تخدم في مهنة مطلوبة وتحقق دخل مليح؟\nحبيت تتعلم كيفاش تخدم تقنيات احترافية؟\nولا حبيت تكون عندك مهنة تقدر تخدم بيها هنا أو في أي مكان في العالم؟\n\nخلّي معلوماتك، وفريقنا التجاري يتواصل معاك ويشرحلك كل تفاصيل التكوين.\n\nمستقبلك المهني يبدأ بخطوة.",
+                roleBarman: "بارمان",
+                roleBarista: "باريستا",
+                roleCrepier: "صانع الكريب",
+                formTitle: "استمارة الترشح",
+                formSubtitle: "عمّر معلوماتك وفريقنا يتواصل معاك في أقرب وقت.",
+                firstNamePlaceholder: "الاسم الشخصي",
+                lastNamePlaceholder: "اللقب",
+                wilayaPlaceholder: "الولاية",
+                phonePlaceholder: "رقم الهاتف",
+                postePlaceholder: "المنصب المرغوب",
+                submitBtn: "إرسال طلب الترشح",
+                successMsg: "شكراً! توصلنا بطلب ترشحك. فريقنا غادي يتواصل معاك قريباً.",
+                errorMsg: "وقع خطأ أثناء الإرسال. حاول مرة أخرى من فضلك.",
+                footerTagline: "#مستقبلك هو مهمتنا.",
+                footerAbout: "من نحن",
+                footerContact: "اتصل بنا",
+                footerStories: "قصص نجاح",
+                footerCopyright: "جميع الحقوق محفوظة © 2026 Chill House",
+                waTooltip: "تواصل عبر واتساب",
+                callTooltip: "اتصل بنا"
+            }
+        };
+
+        const wilayaArabic = {
+            "Adrar": "أدرار", "Chlef": "الشلف", "Laghouat": "الأغواط", "Oum El Bouaghi": "أم البواقي",
+            "Batna": "باتنة", "Béjaïa": "بجاية", "Biskra": "بسكرة", "Béchar": "بشار", "Blida": "البليدة",
+            "Bouira": "البويرة", "Tamanrasset": "تمنراست", "Tébessa": "تبسة", "Tlemcen": "تلمسان",
+            "Tiaret": "تيارت", "Tizi Ouzou": "تيزي وزو", "Alger": "الجزائر", "Djelfa": "الجلفة",
+            "Jijel": "جيجل", "Sétif": "سطيف", "Saïda": "سعيدة", "Skikda": "سكيكدة",
+            "Sidi Bel Abbès": "سيدي بلعباس", "Annaba": "عنابة", "Guelma": "قالمة", "Constantine": "قسنطينة",
+            "Médéa": "المدية", "Mostaganem": "مستغانم", "MSila": "المسيلة", "Mascara": "معسكر",
+            "Ouargla": "ورقلة", "Oran": "وهران", "El Bayadh": "البيض", "Illizi": "إليزي",
+            "Bordj Bou Arreridj": "برج بوعريريج", "Boumerdès": "بومرداس", "El Tarf": "الطارف",
+            "Tindouf": "تندوف", "Tissemsilt": "تيسمسيلت", "El Oued": "الوادي", "Khenchela": "خنشلة",
+            "Souk Ahras": "سوق أهراس", "Tipaza": "تيبازة", "Mila": "ميلة", "Aïn Defla": "عين الدفلى",
+            "Naâma": "النعامة", "Aïn Témouchent": "عين تموشنت", "Ghardaïa": "غرداية", "Relizane": "غليزان",
+            "Timimoun": "تيميمون", "Bordj Badji Mokhtar": "برج باجي مختار", "Ouled Djellal": "أولاد جلال",
+            "Béni Abbès": "بني عباس", "In Salah": "عين صالح", "In Guezzam": "عين قزام", "Touggourt": "تقرت",
+            "Djanet": "جانت", "El M'Ghair": "المغير", "El Menia": "المنيعة"
+        };
+
+        const posteArabic = {
+            "Barman": "بارمان",
+            "Barista": "باريستا",
+            "Crêpier": "صانع الكريب"
+        };
+
+        function detectLanguage() {
+            const saved = localStorage.getItem("chillhouse_lang");
+            if (saved && translations[saved]) return saved;
+            const sysLang = (navigator.language || navigator.userLanguage || "fr").toLowerCase();
+            if (sysLang.startsWith("ar")) return "ar";
+            if (sysLang.startsWith("en")) return "en";
+            return "fr";
+        }
+
+        function applyLanguage(lang) {
+            const dict = translations[lang] || translations.fr;
+            const isRtl = lang === "ar";
+
+            document.documentElement.lang = lang;
+            document.documentElement.dir = isRtl ? "rtl" : "ltr";
+            document.title = dict.pageTitle;
+
+            const metaDesc = document.querySelector('meta[name="description"]');
+            if (metaDesc) metaDesc.setAttribute("content", dict.metaDescription);
+
+            document.querySelectorAll("[data-i18n]").forEach((el) => {
+                const key = el.getAttribute("data-i18n");
+                if (dict[key] !== undefined) el.textContent = dict[key];
+            });
+
+            document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+                const key = el.getAttribute("data-i18n-placeholder");
+                if (dict[key] !== undefined) el.placeholder = dict[key];
+            });
+
+            const wilayaSelect = document.getElementById("wilaya");
+            if (wilayaSelect) {
+                Array.from(wilayaSelect.options).forEach((opt) => {
+                    if (!opt.value) return;
+                    opt.textContent = isRtl ? (wilayaArabic[opt.value] || opt.value) : opt.value;
+                });
+            }
+
+            const posteSelect = document.getElementById("poste");
+            if (posteSelect) {
+                Array.from(posteSelect.options).forEach((opt) => {
+                    if (!opt.value) return;
+                    opt.textContent = isRtl ? (posteArabic[opt.value] || opt.value) : opt.value;
+                });
+            }
+
+            document.querySelectorAll(".home-lang-btn").forEach((btn) => {
+                btn.classList.toggle("is-active", btn.getAttribute("data-lang") === lang);
+            });
+
+            localStorage.setItem("chillhouse_lang", lang);
+        }
+
+        document.querySelectorAll(".home-lang-btn").forEach((btn) => {
+            btn.addEventListener("click", () => {
+                applyLanguage(btn.getAttribute("data-lang"));
+                homeNavLinks.classList.remove("home-nav_links--open");
+                homeNavToggle.classList.remove("is-open");
+            });
+        });
+
+        applyLanguage(detectLanguage());
+    </script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDeArovKbD40fDBNECXbjQ1o74PjRFsz3I",
+            authDomain: "alex-project-f1111.firebaseapp.com",
+            projectId: "alex-project-f1111",
+            storageBucket: "alex-project-f1111.firebasestorage.app",
+            messagingSenderId: "630220692913",
+            appId: "1:630220692913:web:8b50e947be6c6a394a7190"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // --- Meta (Facebook) Pixel: injected only if an ID is configured in the dashboard ---
+        function loadMetaPixel(pixelId) {
+            if (!pixelId || window.fbq) return;
+            !function (f, b, e, v, n, t, s) {
+                if (f.fbq) return; n = f.fbq = function () {
+                    n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+                };
+                if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+                n.queue = []; t = b.createElement(e); t.async = !0;
+                t.src = v; s = b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t, s)
+            }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', pixelId);
+            fbq('track', 'PageView');
+        }
+
+        // --- Snapchat Pixel: injected only if an ID is configured in the dashboard ---
+        function loadSnapPixel(pixelId) {
+            if (!pixelId || window.snaptr) return;
+            (function (e, t, n) {
+                if (e.snaptr) return; var a = e.snaptr = function () {
+                    a.handleRequest ? a.handleRequest.apply(a, arguments) : a.queue.push(arguments)
+                };
+                a.queue = []; var s = 'script'; var r = t.createElement(s); r.async = !0;
+                r.src = n; var u = t.getElementsByTagName(s)[0];
+                u.parentNode.insertBefore(r, u)
+            })(window, document, 'https://sc-static.net/scevent.min.js');
+            snaptr('init', pixelId);
+            snaptr('track', 'PAGE_VIEW');
+        }
+
+        // --- Site settings from the dashboard: pixels + floating contact buttons ---
+        async function initSiteSettings() {
+            try {
+                const snap = await getDoc(doc(db, "settings", "site"));
+                if (!snap.exists()) return;
+                const data = snap.data();
+
+                if (data.metaPixelId) loadMetaPixel(data.metaPixelId);
+                if (data.snapPixelId) loadSnapPixel(data.snapPixelId);
+
+                if (data.whatsappNumber) {
+                    const waFab = document.getElementById("whatsapp-fab");
+                    waFab.href = `https://wa.me/${data.whatsappNumber.replace(/\D/g, '')}`;
+                    waFab.style.display = "flex";
+                }
+
+                if (data.callNumber) {
+                    const callFab = document.getElementById("call-fab");
+                    callFab.href = `tel:${data.callNumber.replace(/\s/g, '')}`;
+                    callFab.style.display = "flex";
+                }
+            } catch (err) {
+                console.error("Error loading site settings:", err);
+            }
+        }
+
+        initSiteSettings();
+
+        document.getElementById("wf-form-candidate").addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const prenom = document.getElementById("prenom").value.trim();
+            const nom = document.getElementById("nom").value.trim();
+            const telephone = document.getElementById("telephone").value.trim();
+
+            const wilayaSelect = document.getElementById("wilaya");
+            const posteSelect = document.getElementById("poste");
+            const wilaya = wilayaSelect.value;
+            const poste = posteSelect.value;
+
+            try {
+                await addDoc(collection(db, "candidates"), {
+                    prenom,
+                    nom,
+                    name: `${prenom} ${nom}`.trim(),
+                    telephone,
+                    wilaya,
+                    poste,
+                    status: "In progress",
+                    timestamp: new Date(),
+                    dateInscription: new Intl.DateTimeFormat('fr-DZ', {
+                        timeZone: 'Africa/Algiers',
+                        year: 'numeric',
+                        month: '2-digit',
+                        day: '2-digit',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                        second: '2-digit'
+                    }).format(new Date())
+                });
+
+                document.querySelector('.w-form-done').style.display = 'block';
+                document.querySelector('.w-form-fail').style.display = 'none';
+                e.target.reset();
+                applyLanguage(document.documentElement.lang || "fr");
+
+                if (window.fbq) fbq('track', 'Lead');
+                if (window.snaptr) snaptr('track', 'SIGN_UP');
+            } catch (error) {
+                console.error("Error adding candidate: ", error);
+                document.querySelector('.w-form-fail').style.display = 'block';
+                document.querySelector('.w-form-done').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>

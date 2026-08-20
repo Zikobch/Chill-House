@@ -7,11 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="https://bootstrapdemos.adminmart.com/modernize/dist/assets/css/styles.css" />
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        WebFont.load({
+            google: {
+                families: ["Antonio:100,200,300,regular,500,600,700"]
+            }
+        });
+    </script>
+    <link rel="stylesheet" href="/dashboard/theme.css" />
     <link href="/assets/images/chill house.svg" rel="shortcut icon" type="image/x-icon" />
     <link href="/assets/images/chill house.svg" rel="apple-touch-icon" />
     <title>Chill House Admin</title>
-    <link href="/assets/images/chill house.svg" rel="shortcut icon" type="image/x-icon" />
-    <link href="/assets/images/chill house.svg" rel="apple-touch-icon" />
 </head>
 
 <body class="link-sidebar">
@@ -63,7 +72,7 @@
                         </li>
 
                         <li class="sidebar-item">
-                            <a class="sidebar-link" href="/" aria-expanded="false">
+                            <a class="sidebar-link active" href="/dashboard" aria-expanded="false">
                                 <span class="d-flex">
 
                                     <svg class="ti ti-star" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -83,7 +92,37 @@
                                         </defs>
                                     </svg>
                                 </span>
-                                <span class="hide-menu">Dashboard</span>
+                                <span class="hide-menu">Clients (Formations)</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="/dashboard/candidates.html" aria-expanded="false">
+                                <span class="d-flex">
+                                    <svg class="ti ti-users" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="#9E9E9E">
+                                        <path
+                                            d="M17.5 14.5C15.16 14.5 13.25 16.41 13.25 18.75C13.25 19.53 13.46 20.27 13.83 20.9C14.52 22.12 15.82 22.95 17.31 23C17.37 23 17.44 23 17.5 23C17.56 23 17.63 23 17.69 23C19.18 22.95 20.48 22.12 21.17 20.9C21.54 20.27 21.75 19.53 21.75 18.75C21.75 16.41 19.84 14.5 17.5 14.5ZM19.87 18.63L17.61 20.72C17.46 20.86 17.27 20.93 17.08 20.93C16.88 20.93 16.68 20.85 16.53 20.7L15.5 19.67C15.21 19.38 15.21 18.9 15.5 18.61C15.79 18.32 16.27 18.32 16.56 18.61L17.1 19.15L18.86 17.52C19.16 17.24 19.63 17.26 19.91 17.56C20.19 17.86 20.17 18.34 19.87 18.63Z"
+                                            fill="#9E9E9E" style="fill: var(--fillg);" />
+                                        <path opacity="0.4"
+                                            d="M12.16 11.87C12.06 11.86 11.94 11.86 11.83 11.87C9.45 11.79 7.56 9.84 7.56 7.44C7.56 4.99 9.54 3 12 3C14.45 3 16.44 4.99 16.44 7.44C16.43 9.84 14.54 11.79 12.16 11.87Z"
+                                            fill="#9E9E9E" style="fill: var(--fillg);" />
+                                        <path opacity="0.4"
+                                            d="M7.15997 14.56C4.73997 16.18 4.73997 18.82 7.15997 20.43C9.90997 22.27 14.42 22.27 17.17 20.43C17.63 20.12 18.01 19.78 18.32 19.42"
+                                            fill="#9E9E9E" style="fill: var(--fillg);" />
+                                    </svg>
+                                </span>
+                                <span class="hide-menu">Candidats (Recrutement)</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="/dashboard/settings.html" aria-expanded="false">
+                                <span class="d-flex">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9E9E9E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--fillg);">
+                                        <circle cx="12" cy="12" r="3"/>
+                                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                                    </svg>
+                                </span>
+                                <span class="hide-menu">Paramètres</span>
                             </a>
                         </li>
                     </ul>
@@ -404,7 +443,7 @@
     <script type="module">
         // Protect route
         if (!localStorage.getItem("loggedIn")) {
-            window.location.href = "login.html";
+            window.location.href = "/login";
         }
 
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";

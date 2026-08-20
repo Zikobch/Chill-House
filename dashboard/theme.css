@@ -1,0 +1,205 @@
+/* ============================================================
+   Chill House Dashboard Theme
+   Restyles the Modernize admin template to match the main
+   site's brand: cream / tan / dark brown palette, Antonio
+   display font, and pill-shaped buttons, inputs and badges.
+   Loaded after the Modernize styles.css so it can override it.
+   ============================================================ */
+
+:root {
+    --ch-cream: #faeade;
+    --ch-tan: #f2d5c0;
+    --ch-tan-light: #f8e4d5;
+    --ch-brown: #523122;
+    --ch-brown-soft: #6b4a34;
+    --ch-dark: #232323;
+    --ch-purple: #9000ff;
+}
+
+body {
+    background-color: var(--ch-tan) !important;
+    color: var(--ch-brown);
+}
+
+/* ---------- Sidebar ---------- */
+.left-sidebar {
+    background-color: var(--ch-dark) !important;
+    border-right: none !important;
+    --fillg: var(--ch-cream);
+}
+
+.nav-small-cap,
+.nav-small-cap .hide-menu {
+    color: var(--ch-cream) !important;
+    opacity: 0.5;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-family: Antonio, sans-serif;
+}
+
+.sidebar-item .sidebar-link {
+    border-radius: 100px;
+    margin: 2px 12px;
+    color: var(--ch-cream) !important;
+}
+
+.sidebar-item .sidebar-link .hide-menu {
+    font-family: Antonio, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-size: 15px;
+}
+
+.sidebar-item .sidebar-link:hover,
+.sidebar-item .sidebar-link.active {
+    background-color: var(--ch-purple) !important;
+    color: #fff !important;
+    --fillg: #fff;
+}
+
+/* ---------- Topbar ---------- */
+.topbar {
+    background-color: var(--ch-cream) !important;
+    border-bottom: 1px solid var(--ch-tan);
+    --fillg: var(--ch-brown);
+}
+
+.profile-dropdown h5,
+.profile-dropdown .fs-3 {
+    font-family: Antonio, sans-serif;
+    color: var(--ch-brown);
+}
+
+/* ---------- Cards ---------- */
+.card {
+    border: none !important;
+    border-radius: 20px !important;
+    box-shadow: 0 4px 24px rgba(82, 49, 34, 0.08) !important;
+}
+
+.card.bg-info-subtle {
+    border-radius: 20px !important;
+    overflow: hidden;
+}
+
+.stat-card h3 {
+    font-family: Antonio, sans-serif;
+}
+
+.stat-card .text-muted {
+    font-family: Antonio, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 12px;
+}
+
+/* ---------- Headings ---------- */
+h1, h2, h3, h4, h5, h6 {
+    font-family: Antonio, sans-serif;
+}
+
+.modal-title {
+    font-family: Antonio, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    color: var(--ch-brown);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+    border-radius: 100px !important;
+    font-family: Antonio, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.btn-primary {
+    background-color: var(--ch-purple) !important;
+    border-color: var(--ch-purple) !important;
+}
+
+.btn-danger {
+    background-color: #e33d3d !important;
+    border-color: #e33d3d !important;
+}
+
+.btn-outline-secondary {
+    color: var(--ch-brown) !important;
+    border-color: var(--ch-brown) !important;
+    background-color: transparent !important;
+}
+
+.btn-outline-secondary:hover {
+    background-color: var(--ch-brown) !important;
+    color: #fff !important;
+}
+
+/* ---------- Form controls / filters ---------- */
+.form-control,
+.form-select {
+    background-color: var(--ch-tan-light) !important;
+    border: none !important;
+    border-radius: 100px !important;
+    color: var(--ch-brown) !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+    outline: 2px solid var(--ch-brown);
+    box-shadow: none !important;
+}
+
+.form-control::placeholder {
+    color: var(--ch-brown-soft);
+    opacity: 0.7;
+}
+
+.form-label {
+    font-family: Antonio, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--ch-brown);
+    font-size: 13px;
+}
+
+/* ---------- Table ---------- */
+.table thead th {
+    font-family: Antonio, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: var(--ch-brown-soft);
+    border-bottom: 2px solid var(--ch-tan) !important;
+    background: transparent;
+}
+
+.table td {
+    border-color: var(--ch-tan) !important;
+    vertical-align: middle;
+}
+
+.table tbody tr:hover {
+    background-color: var(--ch-tan-light);
+}
+
+/* ---------- Status badges ---------- */
+.status-badge {
+    font-family: Antonio, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+/* ---------- Modals ---------- */
+.modal-content {
+    border: none;
+    border-radius: 20px;
+}
+
+.modal-header,
+.modal-footer {
+    border-color: var(--ch-tan);
+}
+
+/* ---------- Toast ---------- */
+.toast {
+    border-radius: 16px !important;
+}
